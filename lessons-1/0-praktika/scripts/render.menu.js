@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Практика | Методичка 1. ООП в JavaScript</title>
-</head>
-<body>
-<script>
-
 function Container() {
     this.id = "";
     this.className= "";
@@ -26,7 +15,7 @@ function Menu(my_id, my_class, my_items) {
    this.items = my_items;
 }
 
-Menu.prototype = Container.create(Vehicle.prototype);
+//Menu.prototype = Container.create(Vehicle.prototype); 
 Menu.prototype.constructor = Menu;
 
 Menu.prototype.render = function() {	
@@ -63,7 +52,3 @@ Menu.prototype.render = function(){
 
 var menu = new Menu("my_menu", "My_class", m_items);
 var div = document.write(menu.render());
-
-</script>
-</body>
-</html>
