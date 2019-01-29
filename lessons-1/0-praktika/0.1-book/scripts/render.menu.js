@@ -15,7 +15,7 @@ function Menu(my_id, my_class, my_items) {
    this.items = my_items;
 }
 
-//Menu.prototype = Container.create(Vehicle.prototype); 
+Menu.prototype = Container.create(Vehicle.prototype); // При исполнение выдает ошибку
 Menu.prototype.constructor = Menu;
 
 Menu.prototype.render = function() {	
