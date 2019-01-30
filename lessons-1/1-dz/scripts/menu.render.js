@@ -15,6 +15,8 @@ class Menu {
         return result;
     }
     remove(){
-         //TODO: удаление элемента ul
+         //TODO: удаление элемента ul - сделать кнопку при нажатии на которую вызывается метод
+         var MenuUl = document.getElementById("my");
+         MenuUl.remove();
     }
 }

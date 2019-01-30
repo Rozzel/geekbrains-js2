@@ -10,19 +10,41 @@
 
 <body>
    <div id="menu"></div>
+   <p><button class="button-ul">Отключить меню</button></p>
+
+   <!-- <div>
+      <ul class="my" id="my">
+         <li><a href="/">Menu</a></li>
+         <li><a href="/about">About</a></li>
+         <li><a href="/services">Services</a>
+            <ul>
+               <li><a href="/about2">About2</a></li>
+               <li><a href="/services2">Services2</a>
+            </ul>
+         </li>
+      </ul>
+   </div> -->
+
    <script src="scripts/menu.item.js"></script>
    <script src="scripts/menu.render.js"></script>
    <script>
       window.onload = () => {
          let block = document.getElementById('menu');
+         var removeMenuUlButton = document.querySelector('.button-ul');
+
 
          let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Menu'),
             new MenuItem('/about', 'About'),
             new MenuItem('/services', 'Services')
+            // new SubMenu()
          ]);
 
          block.innerHTML = menu.render();
+
+         removeMenuUlButton.addEventListener('click', function () {
+            Menu.prototype.remove();
+         });
       }
    </script>
 </body>
