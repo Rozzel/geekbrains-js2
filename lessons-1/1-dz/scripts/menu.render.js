@@ -6,10 +6,9 @@ class Menu {
     }
     render(){
         let result = `<ul class="${this.className}" id="${this.id}">`;
-        var previousItem = 'MenuItem';
 
         for (let item of this.items){
-            if (item instanceof MenuItem && previousItem == 'MenuItem'){
+            if (item instanceof MenuItem){
                 result += item.render();
             } else if (item instanceof SubMenu){
                 result += item.render();
