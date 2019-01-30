@@ -15,8 +15,6 @@ class Menu {
             }
         }
 
-
-
         result += `</ul>`;
         return result;
     }
