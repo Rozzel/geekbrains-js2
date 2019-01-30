@@ -36,8 +36,10 @@
          let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Menu'),
             new MenuItem('/about', 'About'),
-            new MenuItem('/services', 'Services')
-            // new SubMenu()
+            new MenuItem('/services', 'Services'),
+            new SubMenu('/sub-item', 'Sub item'),
+            new SubMenu('/sub-item', 'Sub item'),
+            new MenuItem('/contacts', 'Contacts'),
          ]);
 
          block.innerHTML = menu.render();

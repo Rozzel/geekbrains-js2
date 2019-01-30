@@ -6,16 +6,22 @@ class Menu {
     }
     render(){
         let result = `<ul class="${this.className}" id="${this.id}">`;
+        var previousItem = 'MenuItem';
+
         for (let item of this.items){
-            if (item instanceof MenuItem){
+            if (item instanceof MenuItem && previousItem == 'MenuItem'){
+                result += item.render();
+            } else if (item instanceof SubMenu){
                 result += item.render();
             }
         }
+
+
+
         result += `</ul>`;
         return result;
     }
     remove(){
-         //TODO: удаление элемента ul - сделать кнопку при нажатии на которую вызывается метод
          var MenuUl = document.getElementById("my");
          MenuUl.remove();
     }
