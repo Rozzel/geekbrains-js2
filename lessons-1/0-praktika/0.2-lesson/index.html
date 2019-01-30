@@ -9,7 +9,16 @@
 </head>
 
 <body>
+<script>
+   window.onload = () => {
+      let menu = new Menu('my', 'my', [
+         new MenuItem('/', 'Menu'),
+         new MenuItem('/about', 'About'),
+         new MenuItem('/services', 'Services')
+      ])   
+   }
 
+</script>
    <script src="scripts/menu.render.js"></script>
 </body>
 

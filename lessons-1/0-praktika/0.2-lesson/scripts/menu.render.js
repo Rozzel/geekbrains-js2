@@ -1,5 +1,17 @@
-var menu = new Menu('my', 'my', [
-    new MenuItem('/', 'Menu'),
-    new MenuItem('/about', 'About'),
-    new MenuItem('/services', 'Services')
-])
+class Menu {
+    constructor(id, className, items){
+        this.id = id;
+        this.className = className;
+        this.items = items;
+    }
+    render(){
+        let result = `<ul class="${this.className}" id="${this.id}">`;
+        for (let item of this.items){
+            if (item instanceof MenuItem){
+                result += item.render();
+            }
+        }
+        result += `</ul>`;
+        return result;
+    }
+}
