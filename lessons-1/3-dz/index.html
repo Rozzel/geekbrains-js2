@@ -9,6 +9,7 @@
 <body>
     <script src="engine.js"></script>
     <script>
+        
         var cheeseBig = new Cheeseburger('cheesebur', 'big', 'cheese', 1, 0);
         cheeseBig.calcAll();
         console.log(`Цена чизбургера: ${cheeseBig.priceRub} ₽, калорий: ${cheeseBig.kcal}`);
@@ -17,6 +18,7 @@
         var cheeseBigMayo = new Cheeseburger('cheesebur', 'big', 'potatoes', 0, 1);
         cheeseBigMayo.calcAll();
         console.log(`Цена чизбургера: ${cheeseBigMayo.priceRub} ₽, калорий: ${cheeseBigMayo.kcal}`);
+
 
         var cheeseLittle = new Cheeseburger('cheesebur', 'little', 'salad', 1, 0);
         cheeseLittle.calcAll();
