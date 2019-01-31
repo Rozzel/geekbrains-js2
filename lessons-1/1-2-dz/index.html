@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Практика | Урок 1</title>
+</head>
+
+<body>
+   <div id="menu"></div>
+   <p><button class="button-ul">Отключить меню</button></p>
+
+
+
+   <script src="scripts/menu.item.js"></script>
+   <script src="scripts/menu.render.js"></script>
+   <script>
+      window.onload = () => {
+         let block = document.getElementById('menu');
+         var removeMenuUlButton = document.querySelector('.button-ul');
+
+
+         let menu = new Menu('my', 'my', [
+            new MenuItem('/', 'Menu'),
+            new MenuItem('/about', 'About'),
+            new MenuItem('/services', 'Services'),
+            new SubMenu('/sub-item', 'Sub item'),
+            new SubMenu('/sub-item', 'Sub item'),
+            new MenuItem('/contacts', 'Contacts'),
+         ]);
+
+         block.innerHTML = menu.render();
+
+         removeMenuUlButton.addEventListener('click', function () {
+            Menu.prototype.remove();
+         });
+      }
+   </script>
+</body>
+
+</html>
+
+
+   <!-- 
+      Неполучается построить HTML без не правильной вложенности подпунктов
+      // Как должно получиться
+      <div>
+      <ul class="my" id="my">
+         <li><a href="/">Menu</a></li>
+         <li><a href="/about">About</a></li>
+         <li><a href="/services">Services</a>
+            <ul>
+               <li><a href="/about2">About2</a></li>
+               <li><a href="/services2">Services2</a>
+            </ul>
+         </li>
+      </ul>
+      </div>
+
+-->
