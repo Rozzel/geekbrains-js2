@@ -19,7 +19,7 @@ class Menu {
         return result;
     }
     remove(){
-         var MenuUl = document.getElementById("my");
+         var MenuUl = document.getElementById(this.id);
          MenuUl.remove();
     }
 }
