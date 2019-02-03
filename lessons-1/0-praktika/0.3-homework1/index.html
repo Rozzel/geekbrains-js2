@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="menu"></div>
+<button id="delete">Delete</button>
+<script src="main.js"></script>
+<script src="MenuItem.js"></script>
+<script src="Menu.js"></script>
+<!--<script src="SubMenu.js"></script>-->
+<script>
+    window.onload = () => {
+        let block = document.getElementById('menu');
+
+        let menu = new Menu('my', 'my', [
+            new SubMenu('/sub', 'Submenu','me', 'me', [
+                new MenuItem('/about', 'About'),
+                new SubMenu('/sub', 'Submenu','me', 'me', [
+                    new MenuItem('/about', 'About'),
+                    new MenuItem('/services', 'Services')
+                ]),
+                new MenuItem('/services', 'Services')
+            ]),
+            new MenuItem('/', 'Menu'),
+            new SubMenu('/about', 'About', 'me1', 'me1', [
+                new MenuItem('/about', 'About'),
+                new MenuItem('/services', 'Services')
+            ]),
+
+            new MenuItem('/services', 'Services'),
+            new MenuItem('/info', 'info'),
+
+        ]);
+
+        block.innerHTML = menu.render();
+
+        document.getElementById('delete').addEventListener('click', () => menu.remove());
+    }
+
+</script>
+</body>
+</html>

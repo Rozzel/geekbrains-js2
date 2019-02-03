@@ -1,0 +1,7 @@
+[
+    {"srcl": "gallery/1-large.jpg", "srcs": "gallery/1-small.jpg", "alt": "Мальдивы: Мостик"},
+    {"srcl": "gallery/2-large.jpg", "srcs": "gallery/2-small.jpg", "alt": "Мальдивы: Мостик - крупный план"},
+    {"srcl": "gallery/3-large.jpg", "srcs": "gallery/3-small.jpg", "alt": "Мальдивы: Вид сверху"},
+    {"srcl": "gallery/4-large.jpg", "srcs": "gallery/4-small.jpg", "alt": "Мальдивы: Двойной мостик"},
+    {"srcl": "gallery/5-large.jpg", "srcs": "gallery/5-small.jpg", "alt": "Мальдивы: Домики в тени"}
+  ]
