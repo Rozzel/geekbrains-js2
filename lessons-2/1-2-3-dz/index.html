@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Фотогалерея - Отдых на Мальдивах</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
+    <link href="css/top.menu.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body class="pattern">
+
+      <header class="page-header">
+          <nav id="menu"></nav>
+        </header>
+
+    <section class="gallery">
+      <h1>Отдых на Мальдивах</h1>
+      <p id="gallery__photo-full"></p>
+      <p id="gallery__photo-previews"></p>
+    </section>
+
+
+    <footer class="page-footer">
+        <small>2019 г.</small>
+      </footer>
+
+
+    <script src="scripts/menu.render.js"></script>
+    <script src="scripts/menu.item.js"></script>
+    <script src="scripts/script.gallery.js"></script>
+
+    <script>
+      window.onload = () => {
+         let block = document.getElementById('menu');
+
+         let menu = new Menu('topmenu', 'topmenu', [
+            new MenuItem('#1', 'Главная'),
+            new MenuItem('#2', 'Каталог'),
+            new SubMenu('#3', 'Акции ▼','akc', 'submenu', [
+                    new MenuItem('#31', 'Кипр'),
+                    new SubMenu('#32', 'Мальта ▶','malta', 'submenu',[
+                      new MenuItem('#321', 'Аттард'),
+                      new MenuItem('#322', 'Заббар'),
+                      new MenuItem('#323', 'Биркиркара'),
+                      new MenuItem('#324', 'Гзира')
+                    ])
+                ]),
+         ]);
+
+         block.innerHTML = menu.render();
+
+      }
+   </script>
+  </body>
+</html>
+

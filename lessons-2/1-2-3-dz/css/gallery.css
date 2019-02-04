@@ -1,13 +1,3 @@
-body {
-    font-weight: 400;
-    font-size: 16px;
-    font-family: "Arial", sans-serif;
-    color: #3a3a3a
-}
-
-p {
-    margin: 0
-}
 .full-photo {
     width: 550px;
     height: 367px;
@@ -62,8 +52,4 @@ p {
     object-fit: cover;
     width: 100px;
     height: 100px;
-}
-
-.pattern {
-    background: url("../image/bg.png") 0 0 repeat;
 }

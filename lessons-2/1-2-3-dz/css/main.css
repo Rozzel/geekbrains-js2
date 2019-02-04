@@ -1,0 +1,25 @@
+body {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    color: #3a3a3a
+}
+
+p {
+    margin: 0;
+}
+
+.pattern {
+    background: url("../image/bg.png") 0 0 repeat;
+}
+
+footer.page-footer {
+    min-height: 30px;
+    padding: 20px;
+  
+    font-size: 16px;
+    color: black;
+    margin-top: 80px;
+    background-color: #01CBFD;
+    text-align: center;
+  }
