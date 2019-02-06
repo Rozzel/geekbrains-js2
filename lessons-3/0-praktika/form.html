@@ -10,44 +10,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
 
-    <title>Основы регулярных выражений в JavaScript</title>
+    <title>Forms | Основы регулярных выражений в JavaScript</title>
     <style>
-    div {
-        margin-left: 12px; margin-top: 12px;
+        body {
+            color: wheat;
+            background-color: gray;
         }
-    p {
-        font-size: 20px;
-    }
-    h1 {
-        font-size: 20px;
-    }
+
+        div {
+            margin-left: 12px;
+            margin-top: 12px;
+            margin-right: 12px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 20px;
+            border: 1px solid greenyellow;
+            padding: 5px;
+        }
+
+        hr {
+            background-color: yellow;
+            height: 2px;
+        }
     </style>
 </head>
 
 <body>
 
     <div>
-        <h1>Основы регулярных выражений в JavaScript</h1>
+        <form action=""><label for=""><input type="text"></label></form>
 
-        <div id="log"></div>
     </div>
 
 
-
-
     <script>
-        let divLog = document.getElementById('log');
 
-        let str = 'Язык JavaScript назвали так из-за популярности языка Java';
-        
-        let regExp1 = new RegExp('java'); 
-        divLog.innerHTML += `<p>${str.search(regExp1)} // если вхождений не найдено</p>`;
-
-        let regExp2 = new RegExp('java', 'i'); 
-        divLog.innerHTML += `<p>${str.search(regExp2)}</p>`;
-
-        let regExp3 = new RegExp('java', 'ig'); 
-        divLog.innerHTML += `<p>${str.search(regExp3)} // g - множественный поиск // Игнорирует флаг g</p>`;
     </script>
 
 

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+    <title>Задание 2</title>
+    <style>
+        body {
+            color: wheat;
+            background-color: gray;
+        }
+
+        .maim {
+            margin-left: 12px;
+            margin-top: 12px;
+            margin-right: 12px;
+            margin-bottom: 5px;
+        }
+
+        p,
+        pre {
+            font-size: 20px;
+            border: 1px solid greenyellow;
+            padding: 5px;
+            color: white;
+        }
+
+        hr {
+            background-color: yellow;
+            height: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div>
+            <pre id="first-text">
+                        One: 'Hi Mary.'
+                        Two: 'Oh, hi.'
+                        One: 'How are you doing?'
+                        Two: 'I'm doing alright. How about you?'
+                        One: 'Not too bad. The weather is great isn't it?'
+                        Two: 'Yes. It's absolutely beautiful today.'
+                        One: 'I wish it was like this more frequently.'
+                        Two: 'Me too.'
+                        One: 'So where are you going now?'
+                        Two: 'I'm going to meet a friend of mine at the department store.'
+                        One: 'Going to do a little shopping?'
+                        Two: 'Yeah, I have to buy some presents for my parents.'
+                        One: 'What's the occasion?'
+                        Two: 'It's their anniversary.'
+                        One: 'That's great. Well, you better get going. You don't want to be late.'
+                        Two: 'I'll see you next time.'
+                        One: 'Sure. Bye.'
+                    </pre>
+        </div>
+
+        <div id="input-text"></div>
+
+    </div>
+
+
+    <script>
+        let firstText = document.getElementById('first-text').textContent;
+        let inputText = document.getElementById('input-text');
+
+        var regexText = firstText.replace(/\B\'/g, '\"')
+            // \B - все кроме границ слова
+            // \' - экранируем '
+            // флаг - g множественный поиск
+
+
+        inputText.innerHTML = `<pre>${regexText}</pre>`;
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
