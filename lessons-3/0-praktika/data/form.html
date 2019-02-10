@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" method="post" id="myform">
+    <label>
+        Your name
+        <input type="text" id="name" name="name">
+    </label>
+    <button id="btn-send" type="submit">Отправить</button>
+</form>
+<script>
+    window.onload = () => {
+        document.getElementById('myform').addEventListener('submit', e => {
+            e.preventDefault(); // отмена отправки формы
+            let userName = document.getElementById('name').value;
+            if (/^[a-zа-яё]{2,30}$/i.test(userName)){
+                alert('Форма заполнена верно')
+            } else {
+                alert('Ошибка в заполнении формы')
+            }
+        })
+    }
+</script>
+</body>
+</html>
