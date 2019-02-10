@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .orange {
+            background-color: orange;
+            color: #fff;
+        }
+
+        .strong {
+            font-weight: bold;
+            font-size: 2em;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(() => {
+            $('p').addClass('orange');
+            $('.text').css({
+        color: 'blue',
+        fontSize: '3em'
+        });
+
+            $('p').eq(1).addClass('strong');
+
+            $('p:eq(5)').addClass('strong')
+
+        $('p').each((index, item) => {
+            // item.classList.add('strong'); //Работа с css
+            $(item).addClass('strong'); // JQ
+        });
+
+
+
+    });
+</script>
+
+</html>

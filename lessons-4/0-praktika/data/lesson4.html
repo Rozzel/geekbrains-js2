@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .orange{
+            background-color: orange;
+            color: #fff;
+        }
+        .strong{
+            font-weight: bold;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dolor, in iste minima molestias porro unde
+    veritatis vero vitae. Aut blanditiis dolor excepturi iusto, pariatur reprehenderit sint sunt unde?</p>
+<p>Aliquam asperiores aut culpa dolor doloribus incidunt maiores nobis placeat quae quod rerum soluta, veritatis vero!
+    Ab, assumenda at blanditiis dolor laboriosam libero magni numquam quo sequi! Commodi, eos itaque.</p>
+<p class="text">Animi architecto, enim ipsum maxime minus molestias nostrum obcaecati optio quam quod rem sapiente, similique
+    veritatis voluptatem voluptates? Ab architecto dolorum obcaecati placeat rem. Est explicabo laborum modi quibusdam
+    quos.</p>
+<p>Atque dolores ea molestiae nihil non numquam quia, quod temporibus vero? Animi deserunt dolor eos fugiat illo nam,
+    quidem quo, rem reprehenderit unde ut veritatis. Fugit illo pariatur reiciendis tenetur.</p>
+<p class="text">Dicta fugit hic molestias nam, placeat quisquam sapiente ut voluptates. Distinctio ex illum iure quasi quis ratione
+    sapiente! Culpa natus nulla, quae quos suscipit unde. Ab nihil placeat soluta vel.</p>
+<p>Aliquam iusto laboriosam vitae? Alias aliquam asperiores beatae deleniti dignissimos doloremque earum esse fugiat
+    harum ipsum iusto, laborum modi nostrum pariatur placeat recusandae reiciendis repellat voluptate! Aperiam beatae
+    quibusdam rem.</p>
+<p class="text">Ab, ad alias aliquam delectus distinctio doloribus illo necessitatibus nemo nisi omnis quasi quibusdam quis
+    reprehenderit saepe sit voluptate voluptates. Eaque eos, impedit inventore magnam porro reprehenderit sed ut
+    vel!</p>
+<p class="text">Aliquam dolor dolorem eum expedita illum, labore laboriosam magnam minima modi nam sequi sint veritatis? Ab
+    aspernatur deserunt dolor nesciunt odit quos tenetur vero voluptatum! Amet consequuntur exercitationem numquam
+    obcaecati!</p>
+<p>Aliquam delectus eos harum in itaque necessitatibus nulla provident rerum sapiente soluta, tempore temporibus veniam 
+    voluptatem! Autem cumque deleniti distinctio, necessitatibus nemo nostrum, nulla possimus quibusdam quidem
+    reiciendis, rem voluptates.</p>
+<p class="text">Accusamus amet consequatur, cumque dolor dolorem, ea est et hic, id illum impedit maiores molestiae nulla officiis
+    praesentium quas quia quos recusandae reiciendis repellat sunt tempora vel veritatis voluptates voluptatibus?</p>
+<p>Accusamus amet at atque commodi debitis, dolor dolores doloribus esse fugiat hic laudantium minima nam nemo non
+    officia possimus quae quia ratione repellat repellendus repudiandae rerum sint tempore ut vel.</p>
+<input type="text" class="phone">
+
+<div class="content">
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste itaque, labore. Consequuntur eum expedita harum necessitatibus officia perspiciatis quia quibusdam rerum voluptates? Corporis eligendi, ipsa ipsam molestiae neque quasi quis!</span><span>Assumenda at, blanditiis cum distinctio est facilis in labore minima nisi nulla odit officia omnis quia sint tempora, velit veniam? Accusantium aperiam, culpa harum iste mollitia neque qui suscipit vitae?</span>
+    </p>
+</div>
+<button class="btn-open">Open</button>
+<button class="btn-close">Close</button>
+<button class="btn-toggle">Toggle</button>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<div class="ajax-data"></div>
+<button class="ajax-get">Make ajax call</button>
+
+<script src="jquery.min.js"></script>
+<script src="jquery.mask.min.js"></script>
+<script>
+    //window.onload
+    // $ и jQuery
+    
+    // IIFE
+    (($) => {
+        $(() => {
+    
+        });
+    })(jQuery);
+    
+    
+    
+    
+    // Короткий вариант
+    // $(() => {
+    //    
+    // });
+    
+    $(document).ready(() => {
+        $('p').addClass('orange');
+        // $('#p1 .text > i')
+        // $('#p1').css('font-size', '2em');
+        $('#p1').css('font-size', '2em').css('color', 'blue');
+        // $('.text').css({
+        //     color: 'rebeccapurple',
+        //     fontSize: '3em'
+        // });
+
+        // Выбор по номеру(индексу)
+        // $('p').eq(1).addClass('strong');
+        //Более быстрый вариант
+        // $('p:eq(4)').addClass('strong');
+
+        // Перебор элемнтов
+        // console.log($('p'));
+        $('p').each((index, item) => {
+            // console.log(index, item);
+            // item.classList.add('strong');
+            $(item).addClass('strong')
+        });
+        // document.querySelector()
+
+        // Работа с событиями
+        let $block = $('.content');
+        let $btn1 = $('.btn-open');
+        let $btn2 = $('.btn-close');
+        let $btn3 = $('.btn-toggle');
+
+        // $btn1.click()
+
+        // $parent.on('click', 'img', () => {
+            // e.currentTarget - это изображение - второй аргумент
+        // });
+
+        $btn1.on('click', () => {
+            // $block.show();
+            // $block.slideDown(3000);
+            $block.fadeIn(3000);
+        });
+        $btn2.on('click', () => {
+            // $block.hide();
+            // $block.slideUp(3000);
+            $block.fadeOut(3000);
+        });
+        $btn3.on('click', () => {
+            // $block.toggle();
+            // $block.slideToggle(3000);
+            $block.fadeToggle(3000);
+        });
+
+        //AJAX
+        let $ajaxBlock = $('.ajax-data');
+        let $ajaxBtn = $('.ajax-get');
+
+        $ajaxBtn.on('click', () => {
+            $.ajax({
+                url: 'user.json',
+                type: 'GET',
+                // async: false // асинхронный запрос
+                dataType: 'json',
+                success: (data) => {
+                    for(let user of data){
+                        let $user = $(`<p>${user.name} - <strong>${user.tel}</strong></p>`);
+                        $ajaxBlock.append($user);
+                    }
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+        });
+
+        //jq Mask
+
+        $('.phone').mask('+7 (000)000-00-00')
+    })
+</script>
+</body>
+</html>

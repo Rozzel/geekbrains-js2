@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .orange {
+            background-color: orange;
+            color: #fff;
+        }
+
+        .strong {
+            font-weight: bold;
+            font-size: 2em;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+        <input type="tel" class="phone"> 
+        <div class="ajax-data"></div>
+        <button class="ajax-get">Make ajax call</button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="data/jquery.mask.min.js"></script>
+
+    <script>
+    $(document).ready( () => {
+
+        //AJAX
+        let $ajaxBlock = $('.ajax-data');
+        let $ajaxBtn = $('.ajax-get');
+
+        $ajaxBtn.on('click', () => {
+            $.ajax({
+                url: 'data/user.json',
+                type: 'GET',
+                // async: false // асинхронный запрос
+                dataType: 'json',
+                success: (data) => {
+                    for(let user of data){
+                        let $user = $(`<p>${user.name} - <strong>${user.tel}</strong></p>`);
+                        $ajaxBlock.append($user);
+                    }
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            });
+        });
+
+        $('.phone').mask('+7 (000) 000-00-00')
+
+    })
+    </script>
+
+</html>
